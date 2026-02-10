@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class AddressBookDTO {
+    @NotBlank(message = "Address cannot be empty")
+    private String address;
 
     @NotBlank(message = "Name cannot be empty")
     @Pattern(
@@ -13,8 +15,6 @@ public class AddressBookDTO {
     )
     private String name;
 
-    @NotBlank(message = "Address cannot be empty")
-    private String address;
 
     @NotBlank(message = "Phone number required")
     @Pattern(
